@@ -58,7 +58,7 @@ void myQueueFree(MyQueue* obj) {
 
 解法：
 
-![](./idea.png)
+![](https://github.com/hairrrrr/1200_Problems/blob/master/02%20%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/0027%20%E7%94%A8%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/idea.png)
 
 https://leetcode-cn.com/problems/implement-queue-using-stacks/solution/232-yong-zhan-shi-xian-dui-lie-cyu-yan-by-realjimm/
 
