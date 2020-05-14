@@ -57,7 +57,7 @@
 
 <a href="https://github.com/hairrrrr/1200_Problems/tree/master/01%20DS/03-25/0007%20%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E7%9A%84%E7%BB%93%E7%82%B9">0007 删除链表中的重复的结点</a>
 
-#### <a href="https://github.com/hairrrrr/1200_Problems/blob/master/01%20%E7%BA%BF%E6%80%A7%E8%A1%A8%E5%92%8C%E9%93%BE%E8%A1%A8/%E5%8F%8D%E6%80%9D1.md">反思 1</a>
+<a href="https://github.com/hairrrrr/1200_Problems/blob/master/01%20%E7%BA%BF%E6%80%A7%E8%A1%A8%E5%92%8C%E9%93%BE%E8%A1%A8/%E5%8F%8D%E6%80%9D1.md">反思 1</a>
 
 <a href="https://github.com/hairrrrr/1200_Problems/tree/master/01%20DS/03-26/0008%20%E9%93%BE%E8%A1%A8%E7%9A%84%E5%9B%9E%E6%96%87%E7%BB%93%E6%9E%84">0008 链表的回文结构</a>
 
@@ -101,7 +101,7 @@
 
 <a href="https://github.com/hairrrrr/1200_Problems/tree/master/02%20%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/0029%20%E8%AE%BE%E8%AE%A1%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97">0029 设计循环队列</a>
 
-<a href=""></a>
+<a href="https://github.com/hairrrrr/1200_Problems/blob/master/02%20%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/%E5%8F%8D%E6%80%9D%203.md">反思 3</a>
 
 <a href=""></a>
 
