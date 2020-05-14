@@ -41,7 +41,7 @@
 ### 一 线性表
 #### 1-1 顺序表和链表
 ***
-#### <a href="https://github.com/hairrrrr/1200_Problems/tree/master/01%20DS/03-25">03-25</a>
+
 
 <a href="https://github.com/hairrrrr/1200_Problems/tree/master/01%20DS/03-25/0001%20%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0">0001 删除链表元素</a>
 
@@ -57,7 +57,7 @@
 
 <a href="https://github.com/hairrrrr/1200_Problems/tree/master/01%20DS/03-25/0007%20%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E4%B8%AD%E7%9A%84%E9%87%8D%E5%A4%8D%E7%9A%84%E7%BB%93%E7%82%B9">0007 删除链表中的重复的结点</a>
 
-#### <a href="https://github.com/hairrrrr/1200_Problems/tree/master/01%20DS/03-26">03/26</a>
+#### <a href="https://github.com/hairrrrr/1200_Problems/blob/master/01%20%E7%BA%BF%E6%80%A7%E8%A1%A8%E5%92%8C%E9%93%BE%E8%A1%A8/%E5%8F%8D%E6%80%9D1.md">反思 1</a>
 
 <a href="https://github.com/hairrrrr/1200_Problems/tree/master/01%20DS/03-26/0008%20%E9%93%BE%E8%A1%A8%E7%9A%84%E5%9B%9E%E6%96%87%E7%BB%93%E6%9E%84">0008 链表的回文结构</a>
 
@@ -71,6 +71,15 @@
 
 <a href="https://github.com/hairrrrr/1200_Problems/tree/master/01%20DS/03-26/0013%20%E7%A7%BB%E9%99%A4%E9%87%8D%E5%A4%8D%E7%BB%93%E7%82%B9">0013 移除重复结点</a>
 
+<a href="https://github.com/hairrrrr/1200_Problems/blob/master/01%20%E7%BA%BF%E6%80%A7%E8%A1%A8%E5%92%8C%E9%93%BE%E8%A1%A8/%E5%8F%8D%E6%80%9D2.md">反思 2</a>
+
+<a href="https://github.com/hairrrrr/1200_Problems/tree/master/01%20%E7%BA%BF%E6%80%A7%E8%A1%A8%E5%92%8C%E9%93%BE%E8%A1%A8/0022%20%E7%8E%AF%E5%BD%A2%E9%93%BE%E8%A1%A8%20%E2%85%A1">0022 环形链表 Ⅱ</a>
+
+<a href="https://github.com/hairrrrr/1200_Problems/tree/master/01%20%E7%BA%BF%E6%80%A7%E8%A1%A8%E5%92%8C%E9%93%BE%E8%A1%A8/0023%20%E6%95%B0%E7%BB%84%E5%BD%A2%E5%BC%8F%E7%9A%84%E6%95%B4%E6%95%B0%E5%8A%A0%E6%B3%95">0023 数组形式的整数加法</a>
+
+<a href="https://github.com/hairrrrr/1200_Problems/tree/master/01%20%E7%BA%BF%E6%80%A7%E8%A1%A8%E5%92%8C%E9%93%BE%E8%A1%A8/0024%20%E5%A4%8D%E5%88%B6%E5%B8%A6%E9%9A%8F%E6%9C%BA%E6%8C%87%E9%92%88%E7%9A%84%E9%93%BE%E8%A1%A8">0024 复制带随机指针的链表</a>
+
+<a href="https://github.com/hairrrrr/1200_Problems/tree/master/01%20%E7%BA%BF%E6%80%A7%E8%A1%A8%E5%92%8C%E9%93%BE%E8%A1%A8/0025%20%E5%AF%B9%E9%93%BE%E8%A1%A8%E8%BF%9B%E8%A1%8C%E6%8F%92%E5%85%A5%E6%8E%92%E5%BA%8F">0025 对链表进行插入排序</a>
 
 <a href=""></a>
 
@@ -80,13 +89,17 @@
 
 <a href=""></a>
 
-<a href=""></a>
 
-<a href=""></a>
+### 二 栈和队列
+***
 
-<a href=""></a>
+<a href="https://github.com/hairrrrr/1200_Problems/tree/master/02%20%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/0026%20%E6%9C%89%E6%95%88%E7%9A%84%E6%8B%AC%E5%8F%B7">0026 有效的括号</a>
 
-<a href=""></a>
+<a href="https://github.com/hairrrrr/1200_Problems/tree/master/02%20%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/0027%20%E7%94%A8%E6%A0%88%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97">0027  用栈实现队列</a>
+
+<a href="https://github.com/hairrrrr/1200_Problems/tree/master/02%20%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/0028%20%E7%94%A8%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E6%A0%88">0028 用队列实现栈</a>
+
+<a href="https://github.com/hairrrrr/1200_Problems/tree/master/02%20%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/0029%20%E8%AE%BE%E8%AE%A1%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97">0029 设计循环队列</a>
 
 <a href=""></a>
 
