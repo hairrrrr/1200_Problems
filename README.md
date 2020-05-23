@@ -124,3 +124,4 @@
     <p><img width="320px" src="https://github.com/hairrrrr/C-CrashCourse/blob/master/img/QR%20Code/0.jpg"></img></p>
 
 </div>
+
