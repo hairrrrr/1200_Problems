@@ -72,7 +72,7 @@ D 父类的公有成员在派生类中仍然是公有的
 
 正确答案：D 
 
-![](D:\图片\A pic\C++\47.png)
+![](https://github.com/hairrrrr/1200_Problems/blob/master/img/5.png)
 
 
 
