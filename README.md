@@ -10,14 +10,13 @@
     <a href="#"> <img src="https://img.shields.io/badge/language-C-orange"></a>
     <a href="#"> <img src="https://img.shields.io/badge/language-C++-purple"></a>
     <a href="#"> <img src="https://img.shields.io/badge/language-Java-green"></a>
-    <a href="#weixin"> <img src="https://img.shields.io/badge/QQ%E7%BE%A4%E5%8F%B7-1040522517-blue"></a>
     <a href="#weixin"> <img src="https://img.shields.io/badge/%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7-%E4%B8%8D%E4%BC%9A%E7%BC%96%E7%A8%8B%E7%9A%84%E7%A8%8B%E5%BA%8F%E5%9C%86-blue"></a>
 </div>
 
 <br>
 
 <div align="center">
-    <img src="https://github.com/hairrrrr/1200_Problems/blob/master/img/logo.png" width="200px">
+    <img src="https://hairrrrr.github.io/assets/2020-11-27-4.png" width="200px">
 </div>
 
 <br>
