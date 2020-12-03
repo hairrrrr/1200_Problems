@@ -271,3 +271,146 @@ D 1，3，3
 
 `D`
 
+
+
+#### 12 &数组名的地址
+
+下面代码会输出()
+
+```c
+int main()
+{
+	int a[4]={1,2,3,4};
+	int *ptr=(int*)(&a+1);
+	printf("%d",*(ptr-1));
+}  
+```
+
+A 4
+B 1
+C 2
+D 3  
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+##### D
+
+`&a` 的类型是 `int* [4]` 
+
+</p>
+</details>
+
+
+
+#### 13 在公有派生的情况下，派生类中定义的成员函数只能访问原基类的
+
+```
+A 公有成员和私有成员
+B 私有成员和保护成员  
+C 公有成员和保护成员
+D 私有成员,保护成员和公有成员  
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`C`
+
+</p>
+</details>
+
+
+
+#### 14 类类型的数组元素会执行构造函数吗？
+
+假定有类AB，有相应的构造函数定义，能正确执行
+
+`AB a(4),b(5),c[3],*p[2]={&a,&b};`
+
+语句，请问执行完此语句后共调用该类的构造函数次数为___  
+
+```
+A 5
+B 4
+C 3
+D 9  
+```
+
+
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`A`
+
+</p>
+</details>
+
+
+
+#### 15 关于多态
+
+```cpp
+class A
+{
+public:
+	A() :m_iVal(0) { test(); }
+	virtual void func() { std::cout << m_iVal << ‘ ’; }
+	void test() { func(); }
+public:
+	int m_iVal;
+};
+class B : public A
+{
+public:
+	B() { test(); }
+	virtual void func()
+	{
+		++m_iVal;
+		std::cout << m_iVal << ‘ ’;
+	}
+};
+int main(int argc, char* argv[])
+{
+	A* p = new B;
+	p->test();
+	return 0;
+}
+```
+
+```
+A 1 0
+B 0 1
+C 0 1 2
+D 2 1 0
+E 不可预期
+F 以上都不对  
+```
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`C`
+
+</p>
+</details>
+
+
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+
+
+</p>
+</details>
+
+
