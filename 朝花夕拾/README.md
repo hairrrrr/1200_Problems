@@ -295,13 +295,13 @@ D 3
 
 <details><summary><b>Answer</b></summary>
 <p>
-##### D
+
+<b> D </b>
 
 `&a` 的类型是 `int* [4]` 
 
 </p>
 </details>
-
 
 
 #### 13 在公有派生的情况下，派生类中定义的成员函数只能访问原基类的
@@ -405,6 +405,352 @@ F 以上都不对
 
 
 
+#### 16 
+
+以下程序的输出结果是  
+
+```cpp
+#include <iostream>
+using namespace std;
+
+void func(char** m) {
+	++m;
+	cout << *m << endl;
+} 
+
+int main() {
+	static char* a[] = { "morning", "afternoon", "evening" };
+	char** p;
+	p = a;
+	func(p);
+	return 0;
+}
+```
+
+.
+
+```
+A afternoon
+B 字符o的起始地址
+C 字符o
+D 字符a的起始地址  
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`A`
+
+`++m` m 向后 四个字节，得到指向字符串 `afternoon` 的指针。
+
+`cout << *m << endl` 会输出 `char*` 指针指向的字符串
+
+</p>
+</details>
+
+
+
+#### 17 有虚函数的类的内存布局
+
+代码执行后，a和b的值分别为?  
+
+```cpp
+class Test {
+public:
+	int a;
+	int b;
+	virtual void fun() {}
+    
+	Test(int temp1 = 0, int temp2 = 0)
+	{
+		a = temp1;
+		b = temp2;
+	} 
+    
+    int getA()
+	{
+		return a;
+	} 
+    
+    int getB()
+	{
+		return b;
+	}
+};
+
+int main()
+{
+	Test obj(5, 10);
+	// Changing a and b
+	int* pInt = (int*)&obj;
+	*(pInt + 0) = 100;
+	*(pInt + 1) = 200;
+	cout << "a = " << obj.getA() << endl;
+	cout << "b = " << obj.getB() << endl;
+	return 0;
+}
+```
+
+```
+A 200 10
+B 5 10
+C 100 200
+D 100 10
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`A`
+
+</p>
+</details>
+
+#### 18 下面哪个指针表达式可以用来引用数组元素`a[i][j][k][l]`
+
+```
+A(((a+i)+j)+k)+l)
+B *(*(*(*(a+i)+j)+k)+l)
+C (((a+i)+j)+k+l)
+D ((a+i)+j+k+l)  
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`B`
+
+`a` 的类型是 ：`int [i][j][k][l]` 。
+
+但是如果要把 a 看成指针的话，a 的类型是 `int* [j][k][l]`
+
+</p>
+</details>
+
+
+
+#### 19
+
+```c
+int fun(int a){
+	a^=(1<<5)-1;
+	return a;
+}
+```
+
+```
+A 10
+B 5
+C 3  
+D 8
+```
+
+
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`A`
+
+```
+21:010101
+
+(1<<5):011111
+
+^:001010
+```
+
+
+
+</p>
+</details>
+
+
+
+
+
+#### 20 计算多维数组元素的地址
+
+二维数组X按行顺序存储，其中每个元素占1个存储单元。若`X[4][4]` 的存储地址为`Oxf8b82140`,`X[9][9]`的存
+储地址为`Oxf8b8221c` ,则`X[7][7]` 的存储地址为
+
+```
+A Oxf8b821c4
+B Oxf8b821a6
+C Oxf8b82198
+D Oxf8b821c0
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`A`
+
+</p>
+</details>
+
+
+
+#### 21 十进制转二进制
+
+求函数返回值，输入 x=9999
+
+```cpp
+int func(int x) {
+	int count = 0;
+	while (x)
+	{
+		count++;
+		x = x & (x - 1);//与运算
+	} 
+    return count;
+}
+```
+
+```
+A 8
+B 9
+C 10
+D 12  
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`A`
+
+</p>
+</details>
+
+
+
+#### 22 怎么输出 `%` ?
+
+执行下面语句后的输出为  
+
+```cpp
+int I = 1;
+if (I <= 0)
+	printf("****\n");
+else
+	printf("%%%%\n");
+```
+
+```
+A %%
+B ****
+C 有语法错，不能正确执行
+D %%%%
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`A`
+
+</p>
+</details>
+
+
+
+#### 23 基类构造函数调用的虚函数
+
+有如下C++代码：  
+
+```cpp
+struct A {
+	void foo() { printf("foo"); }
+	virtual void bar() { printf("bar"); }
+	A() { bar(); }
+};
+struct B :A {
+	void foo() { printf("b_foo"); }
+	void bar() { printf("b_bar"); }
+};
+```
+
+那么：
+
+```cpp
+A *p=new B;
+p->foo();
+p->bar();
+```
+
+输出为：
+
+```
+A barfoob_bar
+B foobarb_bar
+C barfoob_foo
+D foobarb_fpp
+```
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`A`
+
+基类构造调用的虚函数查的是基类的虚函数表
+
+</p>
+</details>
+
+
+
+#### 24 类成员的初始化顺序
+
+```cpp
+class Printer {
+public:
+	Printer(std::string name) { std::cout << name; }
+};
+class Container {
+public:
+	Container() : b("b"), a("a") {}
+	Printer a;
+	Printer b;
+};
+int main() {
+	Container c;
+	return 0;
+}
+```
+
+```
+A 可能是 "ab" 或 "ba"。 依赖于具体的实现
+B 一直都是 "ba"
+C 一直都是 "ab"
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`C`
+
+类成员变量初始化顺序为声明顺序
+
+</p>
+</details>
+
+
+
 <details><summary><b>Answer</b></summary>
 <p>
 
@@ -414,3 +760,55 @@ F 以上都不对
 </details>
 
 
+
+#### 25 默认构造函数
+
+代码可以通过编译吗？如果不能应该如何修改？  
+
+```cpp
+template<class T> class Foo {
+	T tVar;
+public:
+	Foo(T t) : tVar(t) { }
+};
+
+template<class T> class FooDerived :public Foo<T>
+{ };
+
+int main()
+{
+	FooDerived<int> d(5);
+	return 0;
+}
+```
+
+```
+A 代码可以正确通过编译。
+B 编译错误，FooDerived是一个继承模板类的非模板类，它的类型不能改变。
+C 编译错误，tVal变量是一个不确定的类型。
+D 编译错误，可以在FooDerived类中添加一个构造函数解决问题。
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`D`
+
+默认构造函数是无参或全缺省的
+
+</p>
+</details>
+
+
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+
+
+</p>
+</details>
