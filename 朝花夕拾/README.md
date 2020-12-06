@@ -751,16 +751,6 @@ C 一直都是 "ab"
 
 
 
-<details><summary><b>Answer</b></summary>
-<p>
-
-
-
-</p>
-</details>
-
-
-
 #### 25 默认构造函数
 
 代码可以通过编译吗？如果不能应该如何修改？  
@@ -797,6 +787,170 @@ D 编译错误，可以在FooDerived类中添加一个构造函数解决问题�
 `D`
 
 默认构造函数是无参或全缺省的
+
+</p>
+</details>
+
+
+
+#### 26 前缀一元运算符
+
+在重载一个运算符为成员函数时，其参数表中没有任何参数，这说明该运算符是 （ ）  
+
+```
+A 无操作数的运算符
+B 二元运算符
+C 前缀一元运算符
+D 后缀一元运算符  
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+`C`
+
+
+</p>
+</details>
+
+
+
+#### 27
+
+若PAT是一个类，则程序运行时，语句“`PAT(*ad)[3]`;”调用PAT的构造函数的次数是（ ）。  
+
+```
+A 2
+B 3
+C 0
+D 1
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`C`
+
+</p>
+</details>
+
+
+
+#### 28
+
+以下程序输出结果是____。
+
+```cpp
+class A
+{ 
+public:
+virtual void func(int val = 1)
+{ std::cout<<"A->"<<val <<std::endl;}
+virtual void test()
+{ func();}
+};
+
+class B : public A
+{ public:
+void func(int val=0)  
+{std::cout<<"B->"<<val <<std::endl;}
+};
+
+int main(int argc ,char* argv[])
+{
+	B*p = new B;
+	p->test();
+	return 0;
+}
+```
+
+```
+A A->0
+B B->1
+C A->1
+D B->0
+E 编译出错
+F 以上都不对
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`B`
+
+</p>
+</details>
+
+
+
+#### 29
+
+下面程序的输出是（）  
+
+```cpp
+class A
+{
+    p
+        ublic :
+    void foo()
+    {
+        printf("1");
+    } v
+        irtual void fun()
+    {
+        printf("2");
+    }
+};
+class B : public A
+{
+    p
+        ublic :
+    void foo()
+    {
+        printf("3");
+    } v
+        oid fun()
+    {
+        printf("4");
+    }
+};
+
+int main(void)
+{
+    A a;
+	B b;
+	A* p = &a;
+	p->foo();
+	p->fun();
+	p = &b;
+	p->foo();
+	p->fun();
+	A* ptr = (A*)&b;
+	ptr->foo();
+	ptr->fun();
+    
+	return 0;
+}
+```
+
+```
+A 121434
+B 121414
+C 121232
+D 123434  
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`B`
 
 </p>
 </details>
