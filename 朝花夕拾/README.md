@@ -957,6 +957,184 @@ D 123434
 
 
 
+#### 30 
+
+下面程序的输出结果是？  
+
+```cpp
+#include<iostream.h>
+void main() {
+    int n[][3] = { 10,20,30,40,50,60 };
+    int(*p)[3];
+    p = n;
+    cout << p[0][0] << "," << *(p[0] + 1) << "," << (*p)[2] << endl;
+}
+```
+
+```
+A 10,30,60
+B 10,30,50
+C 10,20,30
+D 20,40,60
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+`C`
+
+</p>
+</details>
+
+
+
+#### 31 
+
+下面程序的输出结果是_______。  
+
+```cpp
+#include < iostream.h>
+#define SQR(A) A*A
+void main() {
+    int x = 6, y = 3, z = 2;
+    x /= SQR(y + z) / SQR(y + z);
+    cout < < x < < endl;
+}
+```
+
+```
+A 5
+B 6
+C 1
+D 0
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`D`
+
+</p>
+</details>
+
+
+
+#### 32 内存对齐
+
+在一个64位的操作系统中定义如下结构体  
+
+```cpp
+struct st_task
+{
+    uint16_t id;
+    uint32_t value;
+    uint64_t timestamp;
+};
+void fool()
+{
+    st_task task = {};
+    uint64_t a = 0x00010001;
+    memcpy(&task, &a, sizeof(uint64_t));
+    printf("%11u,%11u,%11u", task.id, task.value, task.timestamp);
+}
+```
+
+上述`fool()`程序的执行结果为（）  
+
+```
+A 1，0，0
+B 1，1，0
+C 0，1，1
+D 0，0，1
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`A`
+
+一般机器都是小端存储
+
+```
+id（两个字节） -> 01 00
+pad（内存对齐，两个字节） -> 01 00
+value（四个字节） -> 00 00 00 00 （a 的表示中省略了高位 4 个字节的 0）
+```
+
+
+
+</p>
+</details>
+
+
+
+#### 33 
+
+下列一段C++代码的输出是?  
+
+```cpp
+#include "stdio.h"
+class Base
+{
+    public :
+    int Bar(char x)
+    {
+        return (int)(x);
+    } 
+    virtual int Bar(int x)
+    {
+        return (2 * x);
+    }
+};
+class Derived : public Base
+{
+    public :
+    int Bar(char x)
+    {
+        return (int)(-x);
+    } 
+    int Bar(int x)
+    {
+        return (x / 2);
+    }
+};
+int main(void)
+{
+    Derived Obj;
+    Base* pObj = &Obj;
+    printf("%d,", pObj->Bar((char)(100)));
+    printf("%d,", pObj->Bar(100));
+}
+```
+
+```
+A 100，-100
+B 100，50
+C 200，-100
+D 200，50
+```
+
+
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`B`
+
+要理解 C++ 函数重载的机制，重载的函数底层的函数名是不同的，可以理解为不同的函数。
+
+</p>
+</details>
+
+
+
 
 
 <details><summary><b>Answer</b></summary>
