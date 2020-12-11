@@ -1493,12 +1493,442 @@ D C::print() B::print() A::print() A::print() B::print() C::print() C::print() C
 
 
 
+#### 42 假设寄存器为8位，用补码形式存储机器数，包括一位符号位，那么十进制数`-25`在寄存器表示为  
+
+```
+A 67H
+B 99H
+C E6H
+D E7H  
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+`D`
+
+```
+-1 -> FF
+-1 - 24 = -25
+FF - 18 = E7
+```
+
+
+
+</p>
+</details>
+
+
+
+#### 43 
+
+```cpp
+
+int Function(unsigned int n) {
+    n = (n & 0x55555555) + ((n >> 1) & 0x55555555);
+    n = (n & 0x33333333) + ((n >> 2) & 0x33333333);
+    n = (n & 0x0f0f0f0f) + ((n >> 4) & 0x0f0f0f0f);
+    n = (n & 0x00ff00ff) + ((n >> 8) & 0x00ff00ff);
+    n = (n & 0x0000ffff) + ((n >> 16) & 0x0000ffff);
+    return n;
+}
+```
+
+输入参数为197时，函数返回多少？  
+
+```
+A 2
+B 3
+C 4
+D 5
+```
+
 
 
 <details><summary><b>Answer</b></summary>
 <p>
 
- 
+`C`
+
+这是“平行算法”求二进制位中 1 的个数。
+
+可以参考：
+
+https://blog.csdn.net/hyqsong/article/details/50880526
+
+https://www.nowcoder.com/questionTerminal/618c7143cc664cd4afe8ddb2ccaab2cf
+
+</p>
+</details>
+
+
+
+#### 44 下面程序的功能是输出数组的全排列。请填空  
+
+```cpp
+void perm(int list[], int k, int m)
+{
+    if ()
+    {
+        copy(list, list + m, ostream_iterator<int>(cout, " "));
+        cout << endl;
+        return;
+    } 
+    for (int i = k; i <= m; i++)
+    {
+        swap(&list[k], &list[i]);
+        ();
+        swap(&list[k], &list[i]);
+    }
+}
+```
+
+```
+A k!=m 和 perm（list，k+1，m）
+B k==m 和 perm（list，k+1，m）
+C k!=m 和 perm（list，k，m）
+D k==m 和 perm（list，k，m）
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`B`
+
+</p>
+</details>
+
+
+
+#### 45 const 和 mutable
+
+以下代码编译有错误，哪个选项能解决编译错误？  
+
+```cpp
+class A {
+public:
+    int GetValue() const {
+        vv = 1;
+        return vv;
+    }
+private:
+    int vv;
+};
+```
+
+```
+A 改变成员变量"vv"为"mutable int vv"
+B 改变成员函数"GetValue"的声明，以使其不是const的
+C 都不能修复编译错误
+D 都可以修复编译错误
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`D`
+
+</p>
+</details>
+
+#### 46
+
+以下程序的输出是  
+
+```cpp
+class Base {
+public:
+    Base(int j) : i(j) {}
+    virtual~Base() {}
+    void func1() {
+        i *= 10;
+        func2();
+    } 
+    int getValue() {
+        return i;
+    } 
+    protected :
+    virtual void func2() {
+        i++;
+    } 
+    protected :
+    int i;
+};
+class Child : public Base {
+public:
+    Child(int j) : Base(j) {}
+    void func1() {
+        i *= 100;
+        func2();
+    } 
+    protected :
+    void func2() {
+        i += 2;
+    }
+};
+int main() {
+    Base* pb = new Child(1);
+    pb->func1();
+    cout << pb->getValue() << endl; delete pb;
+}
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`C`
+
+</p>
+</details>
+
+
+
+#### 47 静态联编和动态联编 
+
+调用一成员函数时, 使用动态联编的情况是  
+
+```
+A 通过对象调用一虚函数
+B 通过指针或引用调用一虚函数
+C 通过对象调用静态函数
+D 通过指针或应用调用一静态函数
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+`B`
+
+静态联编：
+
+```cpp
+#include <iostream>
+using namespace std;
+class shape {
+public:
+    void draw() { cout << "I am shape" << endl; }
+    void fun() { draw(); }
+};
+class circle :public shape {
+public:
+    void draw() { cout << "I am circle" << endl; }
+};
+void main() {
+    circle  oneshape;
+    oneshape.fun();
+}
+```
+
+使用 VS 反汇编查看：
+
+```
+ void fun() { draw(); }
+00EE2560  push        ebp  
+00EE2561  mov         ebp,esp  
+00EE2563  sub         esp,0CCh  
+00EE2569  push        ebx  
+00EE256A  push        esi  
+00EE256B  push        edi  
+00EE256C  push        ecx  
+00EE256D  lea         edi,[ebp-0CCh]  
+00EE2573  mov         ecx,33h  
+00EE2578  mov         eax,0CCCCCCCCh  
+00EE257D  rep stos    dword ptr es:[edi]  
+00EE257F  pop         ecx  
+00EE2580  mov         dword ptr [this],ecx  
+00EE2583  mov         ecx,0EEF027h  
+00EE2588  call        @__CheckForDebuggerJustMyCode@4 (0EE1294h)  
+00EE258D  mov         ecx,dword ptr [this]  
+00EE2590  call        shape::draw (0EE1442h)   !!!! 注意这句话 ！！！！
+00EE2595  pop         edi  
+00EE2596  pop         esi  
+00EE2597  pop         ebx  
+00EE2598  add         esp,0CCh  
+00EE259E  cmp         ebp,esp  
+00EE25A0  call        __RTC_CheckEsp (0EE129Eh)  
+00EE25A5  mov         esp,ebp  
+00EE25A7  pop         ebp  
+00EE25A8  ret  
+```
+
+动态联编：
+
+```cpp
+#include <iostream>
+using namespace std;
+class shape {
+public:
+    void virtual draw() { cout << "I am shape" << endl; }//这里设定了draw是虚函数
+    void fun() { draw(); }
+};
+class circle :public shape {
+public:
+    void draw() { cout << "I am circle" << endl; }//虽然没有说明circle类中的draw是虚函数，但是circle其实继承了virtual性质
+};
+void main() {
+    circle  oneshape;
+    oneshape.fun();
+}
+```
+
+反汇编：
+
+```
+void fun() { draw(); }
+00952740  push        ebp  
+00952741  mov         ebp,esp  
+00952743  sub         esp,0CCh  
+00952749  push        ebx  
+0095274A  push        esi  
+0095274B  push        edi  
+0095274C  push        ecx  
+0095274D  lea         edi,[ebp-0CCh]  
+00952753  mov         ecx,33h  
+00952758  mov         eax,0CCCCCCCCh  
+0095275D  rep stos    dword ptr es:[edi]  
+0095275F  pop         ecx  
+00952760  mov         dword ptr [this],ecx  
+00952763  mov         ecx,offset _24CB8158_testJieba@cpp (095F027h)  
+00952768  call        @__CheckForDebuggerJustMyCode@4 (0951294h)  
+0095276D  mov         eax,dword ptr [this]  
+00952770  mov         edx,dword ptr [eax]  
+00952772  mov         esi,esp  
+00952774  mov         ecx,dword ptr [this]  
+00952777  mov         eax,dword ptr [edx]  
+00952779  call        eax   ！！！ 这里应该是查找虚函数表 ！！！
+0095277B  cmp         esi,esp  
+0095277D  call        __RTC_CheckEsp (095129Eh)  
+00952782  pop         edi  
+00952783  pop         esi  
+00952784  pop         ebx  
+00952785  add         esp,0CCh  
+0095278B  cmp         ebp,esp  
+0095278D  call        __RTC_CheckEsp (095129Eh)  
+00952792  mov         esp,ebp  
+```
+
+
+
+[参考文章](https://blog.csdn.net/gaoxin1076/article/details/8298279)
+
+</p>
+</details>
+
+
+
+#### 48 异常的捕获方式
+
+如何捕获异常可以使得代码通过编译？  
+
+```cpp
+class A {
+public:
+    A() {}
+};
+void foo() {
+    throw new A;
+}
+```
+
+```
+A catch (A && x)
+B catch (A * x)
+C catch (A & x)
+D 以上都是
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+`B`
+
+
+</p>
+</details>
+
+
+
+#### 49 *
+
+假设在一个 32 位 `little endian` 的机器上运行下面的程序，结果是多少？  
+
+
+
+```cpp
+#include <stdio.h>
+int main() {
+    long long a = 1, b = 2, c = 3;
+    printf("%d %d %d\n", a, b, c);
+    return 0;
+}
+```
+
+```
+A 1,2,3
+B 1,0,2
+C 1,3,2
+D 3,2,1
+```
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`B`
+
+[参考文章](https://www.cnblogs.com/dingou/p/5834186.html)
+
+</p>
+</details>
+
+
+
+#### 50 
+
+```cpp
+class A {
+public:
+    A() { p(); }
+    virtual void p() { print("A") }
+    virtual ~A() { p(); }
+};
+class B :public A {
+public:
+    B() { p(); }
+    void p() { print("B") }
+    ~B() { p(); }
+};
+int main(int, char**) {
+    A* a = new B();
+    delete a;
+}
+```
+
+```
+A AABB
+B BBAA
+C ABAB
+D ABBA
+```
+
+
+
+
+
+<details><summary><b>Answer</b></summary>
+<p>
+
+`D  `
 
 </p>
 </details>
