@@ -1,0 +1,52 @@
+program orders;
+var
+  num:array['a'..'z'] of integer;
+  n:integer;
+  s:array[1..200] of char;
+
+  procedure DFS(d:integer);
+  var i,j:integer;
+      c:char;
+  begin
+    if d>n then
+      begin
+        for i:=1 to n do write(s[i]);
+        writeln;
+      end else
+        for c:='a' to 'z' do
+          if num[c]>0 then
+            begin
+              dec(num[c]);
+              s[d]:=c;
+              DFS(d+1);
+              inc(num[c]);
+            end;
+
+  end;
+
+  procedure Init;
+  var i,j:integer;
+      c:char;
+      s:string;
+  begin
+    assign(input,'orders.in');
+    reset(input);
+    readln(s);
+    n:=length(s);
+    for i:=1 to length(s) do inc(num[s[i]]);
+  end;
+
+
+  procedure Main;
+  var i,j:char;
+  begin
+    assign(output,'orders.out');
+    rewrite(output);
+    DFS(1);
+    close(output);
+  end;
+
+  begin
+    Init;
+    Main;
+  end.

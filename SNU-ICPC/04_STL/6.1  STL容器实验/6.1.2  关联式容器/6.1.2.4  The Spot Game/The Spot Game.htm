@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<!-- saved from url=(0063)file:///C:/Users/admin/AppData/Local/Temp/Rar$EX01.688/141.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>The Spot Game</title>
+<meta name="description" content="The Spot Game">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+<link rel="STYLESHEET" href="file:///C:/Users/admin/AppData/Local/Temp/Rar$EX01.688/htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+ <h1><br clear="ALL"><center><table bgcolor="#0060F0"><tbody><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">The Spot Game</a></font>&nbsp;</b></td></tr></tbody></table></center></h1>
+<p>
+The game of Spot is played on an NxN board as shown below for N = 4.
+During the game, alternate players may either place a black counter
+(spot) in an empty square or remove one from the board, thus producing
+a variety of patterns. If a board pattern (or its rotation by
+90 degrees or 180 degrees) is repeated during a game, the player
+producing that pattern loses and the other player wins. The game
+terminates in a draw after 2N moves if no duplicate pattern is
+produced before then.
+</p><p>
+Consider the following patterns:
+</p><p>
+</p><p> <img align="BOTTOM" alt="picture23" src="./The Spot Game_files/141img1.gif"> </p><p>
+</p><p>
+If the first pattern had been produced earlier, then any of the
+following three patterns (plus one other not shown) would terminate
+the game, whereas the last one would not.
+</p><p>
+</p><h2><font color="#0070E8"><a name="SECTION0001001000000000000000">Input and Output</a></font></h2>
+<p>
+Input will consist of a series of games, each consisting of the size
+of the board, N (2  <img width="11" height="24" align="MIDDLE" alt="tex2html_wrap_inline180" src="./The Spot Game_files/141img2.gif">  N  <img width="11" height="24" align="MIDDLE" alt="tex2html_wrap_inline180" src="./The Spot Game_files/141img2.gif">  50) followed, on separate lines, by
+2N moves, whether they are all necessary or not. Each move will
+consist of the coordinates of a square (integers in the range 1..N)
+followed by a blank and a character `+' or `-' indicating the addition
+or removal of a spot respectively. You may assume that all moves are
+legal, that is there will never be an attempt to place a spot on an
+occupied square, nor to remove a non-existent spot. Input
+will be terminated by a zero (0).
+</p><p>
+</p><p>
+Output will consist of one line for each game indicating which player
+won and on which move, or that the game ended in a draw.
+</p><p>
+</p><h2><font color="#0070E8"><a name="SECTION0001002000000000000000">Sample input</a></font></h2>
+<p>
+</p><pre>2
+1 1 +
+2 2 +
+2 2 -
+1 2 +
+2
+1 1 +
+2 2 +
+1 2 +
+2 2 -
+0</pre>
+<p>
+</p><h2><font color="#0070E8"><a name="SECTION0001003000000000000000">Sample output</a></font></h2>
+<p>
+</p><pre>Player 2 wins on move 3
+Draw</pre>
+<p>
+
+
+</p></body><div id="qbTrans-pageTrans-dialog"><!----> <span class="qbTrans-pageTrans-dialog-success" style="display: none;"></span> <span class="qbTrans-pageTrans-dialog-text">&#26159;&#21542;&#23558;&#24403;&#21069;&#32593;&#39029;&#32763;&#35793;&#25104;&#20013;&#25991;</span> <div class="qbTrans-pageTrans-dialog-btn">&#32593;&#39029;&#32763;&#35793;</div> <!----> <!----> <div class="qbTrans-pageTrans-dialog-close"><span class="qbTrans-pageTrans-dialog-close-text">&#20851;&#38381;</span> <span class="qbTrans-pageTrans-dialog-arrow-down"></span> <ul class="qbTrans-pageTrans-dialog-menu" style="display: none;"><li class="qbTrans-pageTrans-dialog-menu-item">&#27492;&#32593;&#31449;&#19981;&#20877;&#25552;&#37266;</li> <li class="qbTrans-pageTrans-dialog-menu-item">&#25152;&#26377;&#32593;&#31449;&#19981;&#20877;&#25552;&#37266;</li> <!----></ul></div></div></html>

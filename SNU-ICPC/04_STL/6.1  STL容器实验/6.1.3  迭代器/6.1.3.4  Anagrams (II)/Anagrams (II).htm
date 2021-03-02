@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- saved from url=(0063)file:///C:/Users/admin/AppData/Local/Temp/Rar$EX00.953/630.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Anagrams (II)</title>
+<meta name="description" content="Anagrams (II)">
+<meta name="keywords" content="htmlatex">
+<meta name="resource-type" content="document">
+<meta name="distribution" content="global">
+
+<link rel="STYLESHEET" href="file:///C:/Users/admin/AppData/Local/Temp/Rar$EX00.953/htmlatex.css">
+</head>
+<body lang="EN" bgcolor="#FFFFFF">
+
+<h1><br clear="ALL"><center><table bgcolor="#0060F0"><tbody><tr><td><b><font size="5" color="#C0FFFF">&nbsp;<a name="SECTION0001000000000000000000">
+Anagrams (II)</a>&nbsp;</font></b></td></tr></tbody></table></center>
+</h1>
+
+<p>
+One of the preferred kinds of entertainment of people living in final stages
+of XX century is filling in the crosswords. Almost every newspaper and
+magazine has a column dedicated to entertainment but only amateurs have enough
+after solving one crossword. Real professionals require more than one
+crossword for a week. And it is so dull - just crosswords and crosswords -
+while so many other riddles are waiting out there. For those are special,
+dedicated magazines. There are also quite a few competitions to take part in,
+even reaching the level of World Championships. Anyway - a lot.
+
+</p><p>
+
+</p><p>
+<br>
+You were taken on by such a professional for whom riddle solving competing is
+just a job. He had a brilliant idea to use a computer in work not just to
+play games. Somehow anagrams found themselves first in the line. You are to
+write a program which searches for anagrams of given words, using a given
+vocabulary, tediously filled with new words by yours employer.
+
+</p><p>
+
+</p><h2><font color="#0070E8"><a name="SECTION0001001000000000000000">
+Input</a>&nbsp;</font>
+</h2>
+The structure of input data is given below:
+
+<p>
+</p><pre>&lt;number of words in vocabulary&gt;
+&lt;word 1&gt;
+..............
+&lt;word N&gt;
+&lt;test word 1&gt;
+................
+&lt;test word k&gt;
+END
+</pre>
+
+<p>
+
+<code>&lt;number of words in vocabulary&gt;</code> is an integer number <i>N</i> &lt; 1000. <code>&lt;word 1&gt;</code> up
+to <code>&lt;word N&gt;</code> are words from the vocabulary. <code>&lt;test word 1&gt;</code> up to <code>&lt;test word k&gt;</code>
+are the words to find anagrams for. All words are lowercase (word END means
+end of data - it is NOT a test word). You can assume all words are not
+longer than 20 characters.
+
+</p><p>
+
+</p><h2><font color="#0070E8"><a name="SECTION0001002000000000000000">
+Output</a>&nbsp;</font>
+</h2>
+For each <code>&lt;test word&gt;</code> list the found anagrams in the following way:
+
+<p>
+</p><pre>Anagrams for: &lt;test word&gt;
+&lt;No&gt;) &lt;anagram&gt;
+...............
+</pre>
+
+<p>
+
+<code>&lt;No&gt;</code> should be printed on 3 chars.
+
+</p><p>
+In case of failing to find any anagrams your output should look like this:
+
+</p><p>
+</p><pre>Anagrams for: &lt;test word&gt;
+No anagrams for: &lt;test word&gt;
+</pre>
+
+<p>
+
+</p><h2><font color="#0070E8"><a name="SECTION0001003000000000000000">
+Sample Input</a>&nbsp;</font>
+</h2>
+
+<p>
+</p><pre>8
+atol
+lato
+microphotographics
+rata
+rola
+tara
+tola
+pies
+tola
+kola
+aatr
+photomicrographics
+END
+</pre>
+
+<p>
+
+</p><h2><font color="#0070E8"><a name="SECTION0001004000000000000000">
+Sample Output</a>&nbsp;</font>
+</h2>
+				
+<pre>Anagrams for: tola
+  1) atol
+  2) lato
+  3) tola
+Anagrams for: kola
+No anagrams for: kola
+Anagrams for: aatr
+  1) rata
+  2) tara
+Anagrams for: photomicrographics
+  1) microphotographics
+</pre>
+
+<p>
+
+</p><p>
+<br></p><hr>
+<address>
+<i>Miguel A. Revilla</i>
+<br><i>2000-01-10</i>
+</address>
+
+
+
+</body><div id="qbTrans-pageTrans-dialog"><!----> <span class="qbTrans-pageTrans-dialog-success" style="display: none;"></span> <span class="qbTrans-pageTrans-dialog-text">&#26159;&#21542;&#23558;&#24403;&#21069;&#32593;&#39029;&#32763;&#35793;&#25104;&#20013;&#25991;</span> <div class="qbTrans-pageTrans-dialog-btn">&#32593;&#39029;&#32763;&#35793;</div> <!----> <!----> <div class="qbTrans-pageTrans-dialog-close"><span class="qbTrans-pageTrans-dialog-close-text">&#20851;&#38381;</span> <span class="qbTrans-pageTrans-dialog-arrow-down"></span> <ul class="qbTrans-pageTrans-dialog-menu" style="display: none;"><li class="qbTrans-pageTrans-dialog-menu-item">&#27492;&#32593;&#31449;&#19981;&#20877;&#25552;&#37266;</li> <li class="qbTrans-pageTrans-dialog-menu-item">&#25152;&#26377;&#32593;&#31449;&#19981;&#20877;&#25552;&#37266;</li> <!----></ul></div></div></html>
