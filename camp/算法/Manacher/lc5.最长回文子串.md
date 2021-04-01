@@ -1,5 +1,5 @@
 ---
-tags: Manacher dp 区间dp
+tags: Manacher DP 区间DP
 ---
 
 
