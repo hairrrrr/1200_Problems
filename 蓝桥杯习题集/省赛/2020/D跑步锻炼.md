@@ -12,9 +12,3 @@
 
 
 
-![](https://hairrrrr.gitee.io/img/1200/1.png)
-
-
-
-![](https://hairrrrr.gitee.io/img/1.jpg)
-
