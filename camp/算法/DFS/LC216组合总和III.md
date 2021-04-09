@@ -64,3 +64,44 @@ public:
 
 
 
+
+
+```cpp
+class Solution {
+public:
+    vector<vector<int>> ans;
+    int n, k;
+    vector<int> path;
+    vector<vector<int>> combinationSum3(int _k, int _n) 
+    {
+        k = _k, n = _n;
+        path.resize(k);
+        dfs(0, 1, 0);
+        
+        return ans;
+    }
+
+    void dfs(int u, int start, int sum)
+    {
+        if(u == k)
+        {
+            if(sum == n) ans.push_back(path);
+            return;
+        }
+
+        // 后面还可以枚举的数要大于等于我们需要的位数
+        // 也就是：9 - start + 1 >= k - u
+        if(10 - start < k - u) return;
+
+        for(int i = start; i <= 9; ++i)
+        {
+            if(i > n) break;
+            path[u] = i;
+            dfs(u + 1, i + 1, sum + i);
+        }
+    }
+};
+```
+
+
+

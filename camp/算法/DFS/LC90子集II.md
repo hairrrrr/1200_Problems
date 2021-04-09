@@ -69,3 +69,43 @@ public:
 };
 ```
 
+
+
+```cpp
+class Solution 
+{
+    vector<vector<int>> ans;
+    vector<int> path;
+public:
+    vector<vector<int>> subsetsWithDup(vector<int>& nums)
+    {
+        sort(nums.begin(), nums.end());
+        dfs(nums, 0);
+        return ans;
+    }
+
+    void dfs(vector<int>& nums, int u)
+    {
+        if(u == nums.size()) 
+        {
+            ans.push_back(path);
+            return;
+        }
+
+        int k = 0;
+        while(u + k < nums.size() && nums[u + k] == nums[u]) k++;
+
+        // 每个数有 [0, k] 种选择
+        for(int i = 0; i <= k; ++i)
+        {
+            // 向后走 k 位
+            dfs(nums, u + k);
+            path.push_back(nums[u]);
+        }
+        // 回溯
+        for(int i = 0 ; i <= k; ++i)
+            path.pop_back();
+    }
+};
+```
+
