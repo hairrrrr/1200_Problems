@@ -7,7 +7,38 @@
 
 
 ```cpp
+#include <iostream>
+using namespace std;
 
+int days[] = {0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+
+int main()
+{
+    int y = 2000, m = 1, d = 1, w = 5, ans = 0;
+  
+    while(true)
+    {
+      ans += (d == 1 || w == 0) + 1;
+      
+      if(y == 2020 && m == 10 && d == 1) break;
+      
+      d++;
+      w++;
+      w %= 7;
+
+      if(m == 2 && ((y % 4 == 0 && y % 100 != 0) || y % 400 == 0))
+      {
+        if(d > days[2] + 1) d = 1, m++;
+      }
+      else if(d > days[m]) d = 1, m++;
+
+      if(m == 13) m = 1, y++;
+    }
+
+    cout << ans << endl;
+
+  return 0;
+}
 ```
 
 
