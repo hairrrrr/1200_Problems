@@ -48,3 +48,52 @@ X X X X X X X X X X X X X X X X X X X X X X X X X X X X X X
 工作人员发现，其中读数最小的电子秤的示数为：2086458231
 
 请你推算出：读数最大的电子秤的示数为多少？
+
+
+
+```cpp
+#include<cstring>
+#include<cstdio>
+#include<sstream>
+#include<algorithm>
+#include<iostream>
+
+using namespace std;
+
+const int N = 29;
+
+double a[N + 1][N + 1];
+
+int main()
+{
+	// 读入 0 ~ 28 层 
+	for(int i = 0; i < N; ++i)
+		for(int j = 0; j <= i; ++j)
+			scanf("%lf", &a[i][j]);
+	
+	// 计算传递 
+	for(int i = 0; i < 29; ++i)
+	{
+		for(int j = 0; j <= i; ++j)
+			a[i + 1][j] += a[i][j] / 2, a[i + 1][j + 1] += a[i][j] / 2;
+	}
+	
+	
+	// 计算第 29 层的秤 
+	double maxn = -1, minn = 1e18;
+	for(int i = 0; i < 30; ++i)
+	{
+		maxn = max(a[N][i], maxn);
+		minn = min(a[N][i], minn);
+	}
+	// 按比例兑换 
+	double ans = maxn * (2086458231 / minn);
+	printf("%f", ans);
+	
+	return 0;
+} 
+```
+
+
+
+[参考](https://blog.csdn.net/y1196645376/article/details/50938608)

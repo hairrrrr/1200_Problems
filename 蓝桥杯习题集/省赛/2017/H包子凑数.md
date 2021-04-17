@@ -61,3 +61,65 @@ INF
 > 样例说明
 
 所有奇数都凑不出来，所以有无限多个
+
+
+
+```cpp
+#include<cstdio>
+#include<cstring>
+
+using namespace std;
+
+const int N = 110, M = 10000;
+
+// 凑不出的数最大是 10000 
+// 如果只有两个数，根据裴蜀定理，凑不出的数的最大值为 (a - 1)(b - 1) - 1 
+// 因为 a b 都是小于 100 的，所以凑不出的数的最大值为 99 * 99 - 1 < 10000 
+// 如果数的个数增多，那么凑不出的情况小于等于 10000
+int a[N];
+bool f[N][M];
+
+int gcd(int a, int b)
+{
+    return b == 0 ? a : gcd(b, a % b);
+}
+
+int main()
+{
+    int n;
+    scanf("%d", &n);
+    
+    int d = 0;
+    for(int i = 1; i <= n; ++i)
+    {
+        scanf("%d", &a[i]);
+        d = gcd(a[i], d);
+    }
+    
+    // 如果这些数的最大公约数不为 1，凑不出的数有无穷个
+    if(d != 1) 
+    {
+        puts("INF");
+        return 0;
+    }
+    
+    // f[i][j] 表示从前 i 个数中选出总和是 j 的可能性
+    // f[i][j]     = f[i-1][j] | f[i-1][j-a[i]] | f[i-1][j-a[i]*2] ... 
+    // f[i][j-a[i] =             f[i-1][j-a[i]] | f[i-1][j-a[i]*2]..
+    f[0][0] = true;
+    for(int i = 1; i <= n; ++i)
+        for(int j = 0; j < M; ++j)
+        {
+            f[i][j] = f[i - 1][j];
+            if(j >= a[i]) f[i][j] |= f[i][j - a[i]];
+        }
+    
+    int ans = 0;
+    for(int i = 1; i < M; ++i) 
+        if(!f[n][i]) ans++;
+    printf("%d\n", ans);
+    
+    return 0;
+}
+```
+

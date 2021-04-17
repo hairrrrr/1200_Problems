@@ -70,3 +70,7 @@ https://www.lanqiao.cn/problems/645/learning/
 需要说明的是，88 折指的是按标价的 88% 计算，而 88 折是按 80% 计算，余者类推。 特别地，半价是按 50% 计算。
 
 请输出小明要从取款机上提取的金额，单位是元。
+
+
+
+[参考](https://blog.csdn.net/y1196645376/article/details/50938608)

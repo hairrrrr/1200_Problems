@@ -29,3 +29,62 @@
 1 0 1 0 1 0 9 32 9 16 17 12 17 4 33 16 65 16 1 32 1 64 0 -128 1 0 2 0 12 0 112 0 
 0 0 0 0 7 -16 24 24 48 12 56 12 0 56 0 -32 0 -64 0 -128 0 0 0 0 1 -128 3 -64 1 -128 0 0 
 ```
+
+
+
+```cpp
+#include<cstring>
+#include<cstdio>
+#include<sstream>
+#include<algorithm>
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+	int n = 10;
+	
+	while(n--)
+	{
+		for(int i = 0; i < 16; ++i)
+		{
+			unsigned int a, b;
+			scanf("%d%d", &a, &b);
+			for(int j = 31; j >= 0; --j)
+			{
+				if(a >> j & 1) cout << 0;
+				else cout << " ";
+			}
+				
+			for(int j = 31; j >= 0; --j)
+			{
+				if(b >> j & 1) cout << 0;
+				else cout << " ";
+			}
+			puts("");
+			puts("");
+		}			
+	}
+    
+    return 0;
+}
+```
+
+
+
+**九的九次方等于多少？**
+
+```cpp
+#include <iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+  
+  cout << (int)pow(9, 9) << endl;
+
+  return 0;
+}
+```
+

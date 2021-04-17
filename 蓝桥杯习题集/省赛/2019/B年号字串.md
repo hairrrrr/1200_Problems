@@ -21,14 +21,17 @@ string ans;
 
 void dfs(int n)
 {
-	if(!n) return;
-	dfs(n / 26);
-	ans += (n % 26 + 'A' - 1);
+	if(n < 0) return;
+	dfs(n / 26 - 1);
+	ans += (n % 26 + 'A');
 }
 
 int main()
 {
-	dfs(2019);  
+    //int n = 26;
+	int n = 2019;
+	
+	dfs(n - 1);  
   	
   	cout << ans << endl;
 
@@ -50,11 +53,13 @@ string ans;
 int main()
 {
 	int n = 2019;
-	while(n)
+    n--;
+	while(n >= 0)
 	{
-		char ch = n % 26 + 'A' - 1;
+		char ch = n % 26 + 'A';
 		ans = ch + ans;
 		n /= 26;
+        n--;
 	}
   	
   	cout << ans << endl;
